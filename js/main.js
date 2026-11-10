@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   var config = window.SITE_CONFIG || {};
-  var brand = config.brandName || "Workflow AI";
+  var brand = config.brandName || "Loopsoha";
   var email = config.contactEmail || "zg0427@gmail.com";
   document.querySelectorAll("[data-brand]").forEach(function (el) { el.textContent = brand; });
   document.querySelectorAll("[data-email]").forEach(function (el) {
@@ -9,8 +9,8 @@
     if (!el.children.length) el.textContent = email;
   });
   document.querySelectorAll("[data-mailto]").forEach(function (el) { el.href = "mailto:" + email; });
-  if (document.title.indexOf("Workflow AI") !== -1) document.title = document.title.replace("Workflow AI", brand);
-  document.querySelectorAll('meta[property="og:title"], meta[name="twitter:title"]').forEach(function (el) { el.content = el.content.replace("Workflow AI", brand); });
+  if (document.title.indexOf("Loopsoha") !== -1) document.title = document.title.replace("Loopsoha", brand);
+  document.querySelectorAll('meta[property="og:title"], meta[name="twitter:title"]').forEach(function (el) { el.content = el.content.replace("Loopsoha", brand); });
 
   var toggle = document.querySelector(".menu-toggle");
   var nav = document.getElementById("primary-nav");

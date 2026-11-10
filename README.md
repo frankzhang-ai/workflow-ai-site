@@ -1,23 +1,16 @@
-# Workflow AI website
+# Loopsoha website
 
-A lightweight, single-page marketing site and privacy page for Workflow AI. It uses static HTML, CSS, and JavaScript, with no build step, analytics, form backend, or third-party runtime service.
+A lightweight static marketing site and privacy page for Loopsoha. It uses HTML, CSS, and JavaScript with no build step, analytics, form backend, or third-party runtime service.
 
-## Preview locally
+This is a local, unpublished preview. The formal deployment plan and public URL have not been decided. Both pages include `noindex, nofollow` while the site remains a preview.
 
-From this directory, run:
+## Files
 
-```sh
-python -m http.server 8000
-```
+- `index.html` — marketing page
+- `privacy.html` — privacy information
+- `css/styles.css` — responsive styling
+- `js/main.js` — menu and mailto form behavior
+- `js/site.config.js` — brand and contact settings
+- `assets/favicon.svg` — site mark
 
-Then open `http://localhost:8000` in a browser. You can also open `index.html` directly, although a local server is closer to how GitHub Pages serves the files.
-
-## Site settings
-
-Change the brand name, contact email, and deployment URL in one configuration file: `js/site.config.js`. The page applies the brand name and email to matching text, email links, and title fragments when JavaScript is enabled. For a fully consistent no-JavaScript rename, also update the visible fallback brand name and email in `index.html` and `privacy.html`.
-
-The brand name is provisional. Check trademark, domain, and business-name availability before formal use.
-
-## Deployment
-
-The intended repository is `frankzhang-ai/workflow-ai-site`, served by GitHub Pages from the root of the `main` branch. Both pages currently include `noindex, nofollow` for preview; remove those robots directives before a public launch. Keep canonical and social metadata aligned with `siteUrl` when changing the deployment URL.
+The contact form opens the visitor’s email app and uses `zg0427@gmail.com`; it does not submit to a backend.
