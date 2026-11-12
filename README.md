@@ -2,7 +2,7 @@
 
 A lightweight static marketing site and privacy page for Loopsoha. It uses HTML, CSS, and JavaScript with no build step, analytics, form backend, or third-party runtime service.
 
-This is a local, unpublished preview. The formal deployment plan and public URL have not been decided. Both pages include `noindex, nofollow` while the site remains a preview.
+The public site is at [https://loopsoha.com/](https://loopsoha.com/). GitHub Pages serves the `main` branch.
 
 ## Files
 
@@ -12,5 +12,8 @@ This is a local, unpublished preview. The formal deployment plan and public URL 
 - `js/main.js` — menu and mailto form behavior
 - `js/site.config.js` — brand and contact settings
 - `assets/favicon.svg` — site mark
+- `CNAME` — GitHub Pages custom domain (`loopsoha.com`)
+- `robots.txt` — allows indexing and points to the sitemap
+- `sitemap.xml` — home and privacy page URLs
 
 The contact form opens the visitor’s email app and uses `zg0427@gmail.com`; it does not submit to a backend.
