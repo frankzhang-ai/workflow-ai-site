@@ -68,3 +68,13 @@
 .card-link{font-size:13px}
 @media(max-width:600px){.card-body{padding:20px}.product-card ul.card-points{grid-template-columns:1fr}.product-card h3{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.product-card,.card-media img{transition:none}.product-card:hover,.product-card:hover .card-media img{transform:none}}
+
+/* Hero visual + wide video card */
+.hero-visual{position:relative;margin:0;border-radius:14px;overflow:hidden;background:var(--mint);box-shadow:0 30px 60px -30px rgba(24,52,58,.35)}
+.hero-visual img{display:block;width:100%;height:auto;aspect-ratio:5/4;object-fit:cover}
+.hero-visual figcaption{position:absolute;left:16px;bottom:16px;display:flex;align-items:center;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.93);color:#4c6266;font-size:12px;font-weight:600;backdrop-filter:blur(6px)}
+.product-card-wide{grid-column:1/-1;display:grid;grid-template-columns:1.05fr 1fr}
+.product-card-wide .card-media{aspect-ratio:auto;min-height:100%}
+.product-card-wide .card-body{padding:30px 32px}
+.new-tag{position:absolute;right:16px;top:16px;padding:5px 11px;border-radius:999px;background:var(--rust);color:#fff;font-size:11px;font-weight:750;letter-spacing:.06em}
+@media(max-width:1024px){.product-card-wide{display:flex;grid-column:auto}.product-card-wide .card-media{aspect-ratio:16/10;min-height:0}}
