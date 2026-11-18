@@ -29,10 +29,11 @@
     var status = document.getElementById("form-status");
     if (!form.reportValidity()) return;
     var values = new FormData(form);
-    var subject = "Free 15-minute call request — " + String(values.get("name") || "").trim();
-    var body = ["Hello " + brand + ",", "", "I'd like to book a free 15-minute call.", "", "Name: " + String(values.get("name") || "").trim(), "Email: " + String(values.get("email") || "").trim(), "Company: " + (String(values.get("company") || "").trim() || "Not provided"), "", "What I'd like to improve:", String(values.get("message") || "").trim() || "Not provided", ""].join("\n");
+    var wantsSample = values.get("sample") === "yes";
+    var subject = (wantsSample ? "Free sample request — " : "Free 15-minute call request — ") + String(values.get("name") || "").trim();
+    var body = ["Hello " + brand + ",", "", wantsSample ? "I'd like a free sample promo image, and I'm happy to talk on a free 15-minute call." : "I'd like to book a free 15-minute call.", "", "Name: " + String(values.get("name") || "").trim(), "Email: " + String(values.get("email") || "").trim(), "Company: " + (String(values.get("company") || "").trim() || "Not provided"), "", "Details:", String(values.get("message") || "").trim() || "Not provided", ""].join("\n");
     var href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-    status.textContent = "Your email app should open with a draft. If it does not, email " + email + " to book a call.";
+    status.textContent = "Your email app should open with a draft. If it does not, email " + email + " to get in touch.";
     window.location.href = href;
   });
 }());
