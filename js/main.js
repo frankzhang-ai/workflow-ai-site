@@ -28,6 +28,17 @@
     link.addEventListener("click", function () {
       var message = document.getElementById("message");
       if (message && !message.value.trim()) message.value = link.getAttribute("data-prefill");
+      if (form) {
+        form.setAttribute("data-request", "reviews");
+        if (form.elements.sample) form.elements.sample.checked = false;
+      }
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#sample"]'), function (link) {
+    link.addEventListener("click", function () {
+      if (!form) return;
+      form.removeAttribute("data-request");
+      if (form.elements.sample) form.elements.sample.checked = true;
     });
   });
   if (form) form.addEventListener("submit", function (event) {
@@ -36,8 +47,10 @@
     if (!form.reportValidity()) return;
     var values = new FormData(form);
     var wantsSample = values.get("sample") === "yes";
-    var subject = (wantsSample ? "Free sample request — " : "Free 15-minute call request — ") + String(values.get("name") || "").trim();
-    var body = ["Hello " + brand + ",", "", wantsSample ? "I'd like a free sample promo image, and I'm happy to talk on a free 15-minute call." : "I'd like to book a free 15-minute call.", "", "Name: " + String(values.get("name") || "").trim(), "Email: " + String(values.get("email") || "").trim(), "Company: " + (String(values.get("company") || "").trim() || "Not provided"), "", "Details:", String(values.get("message") || "").trim() || "Not provided", ""].join("\n");
+    var wantsReviews = form.getAttribute("data-request") === "reviews";
+    var subject = (wantsReviews ? "Free sample review replies request — " : wantsSample ? "Free sample request — " : "Free 15-minute call request — ") + String(values.get("name") || "").trim();
+    var intro = wantsReviews ? "I'd like 2 free sample replies to my Google reviews." + (wantsSample ? " I'd also like a free sample promo image." : "") : wantsSample ? "I'd like a free sample promo image, and I'm happy to talk on a free 15-minute call." : "I'd like to book a free 15-minute call.";
+    var body = ["Hello " + brand + ",", "", intro, "", "Name: " + String(values.get("name") || "").trim(), "Email: " + String(values.get("email") || "").trim(), "Company: " + (String(values.get("company") || "").trim() || "Not provided"), "", "Details:", String(values.get("message") || "").trim() || "Not provided", ""].join("\n");
     var href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
     status.textContent = "Your email app should open with a draft. If it does not, email " + email + " to get in touch.";
     window.location.href = href;
