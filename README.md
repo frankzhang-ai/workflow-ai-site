@@ -16,4 +16,4 @@ The public site is at [https://loopsoha.com/](https://loopsoha.com/). GitHub Pag
 - `robots.txt` — allows indexing and points to the sitemap
 - `sitemap.xml` — home and privacy page URLs
 
-The contact form opens the visitor’s email app and uses `zg0427@gmail.com`; it does not submit to a backend.
+The contact form opens the visitor’s email app and uses `hello@loopsoha.com`; it does not submit to a backend.

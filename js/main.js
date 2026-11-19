@@ -2,7 +2,7 @@
   "use strict";
   var config = window.SITE_CONFIG || {};
   var brand = config.brandName || "Loopsoha";
-  var email = config.contactEmail || "zg0427@gmail.com";
+  var email = config.contactEmail || "hello@loopsoha.com";
   document.querySelectorAll("[data-brand]").forEach(function (el) { el.textContent = brand; });
   document.querySelectorAll("[data-email]").forEach(function (el) {
     if (el.tagName === "A") el.href = "mailto:" + email;
@@ -24,6 +24,12 @@
   }
 
   var form = document.getElementById("contact-form");
+  Array.prototype.forEach.call(document.querySelectorAll("[data-prefill]"), function (link) {
+    link.addEventListener("click", function () {
+      var message = document.getElementById("message");
+      if (message && !message.value.trim()) message.value = link.getAttribute("data-prefill");
+    });
+  });
   if (form) form.addEventListener("submit", function (event) {
     event.preventDefault();
     var status = document.getElementById("form-status");
