@@ -24,6 +24,12 @@
   }
 
   var form = document.getElementById("contact-form");
+  Array.prototype.forEach.call(document.querySelectorAll("[data-prefill]"), function (link) {
+    link.addEventListener("click", function () {
+      var message = document.getElementById("message");
+      if (message && !message.value.trim()) message.value = link.getAttribute("data-prefill");
+    });
+  });
   if (form) form.addEventListener("submit", function (event) {
     event.preventDefault();
     var status = document.getElementById("form-status");
