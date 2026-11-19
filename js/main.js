@@ -2,7 +2,7 @@
   "use strict";
   var config = window.SITE_CONFIG || {};
   var brand = config.brandName || "Loopsoha";
-  var email = config.contactEmail || "zg0427@gmail.com";
+  var email = config.contactEmail || "hello@loopsoha.com";
   document.querySelectorAll("[data-brand]").forEach(function (el) { el.textContent = brand; });
   document.querySelectorAll("[data-email]").forEach(function (el) {
     if (el.tagName === "A") el.href = "mailto:" + email;

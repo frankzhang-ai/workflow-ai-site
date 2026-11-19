@@ -1,5 +1,5 @@
 window.SITE_CONFIG = {
   brandName: "Loopsoha",
-  contactEmail: "zg0427@gmail.com",
+  contactEmail: "hello@loopsoha.com",
   siteUrl: "https://loopsoha.com/"
 };
