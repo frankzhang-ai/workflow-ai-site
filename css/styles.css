@@ -115,3 +115,11 @@
 .review-addon .card-link:hover{background:var(--teal);color:#fff}
 @media(max-width:1024px){.review-addon .card-media img{position:static}.product-grid-three{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.product-grid-three{grid-template-columns:1fr}.product-group+.product-group{margin-top:40px}.product-group-title span{font-size:23px}}
+/* About */
+.about-section{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:center;padding-top:96px;padding-bottom:96px}
+.about-photo{margin:0}
+.about-photo img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.about-copy h2{margin-bottom:18px;font-size:clamp(34px,3.6vw,44px)}
+.about-copy>p:not(.eyebrow){max-width:600px;margin-bottom:14px;color:#40575b;font-size:16px}
+.about-copy .text-link{display:inline-block;margin-top:6px}
+@media(max-width:700px){.about-section{grid-template-columns:1fr;gap:28px;padding-top:68px;padding-bottom:68px}.about-photo{max-width:220px}.about-copy>p:not(.eyebrow){font-size:15px}}
